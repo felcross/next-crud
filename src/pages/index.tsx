@@ -29,10 +29,9 @@ const clients = [
        text-white`}>
       <Layout title='Cadastro'>
         <div className='flex justify-end'>
-        <ButtonCad color='green'className='mb-4'>New Client</ButtonCad>
+        <ButtonCad color='green' className='mb-4'>New Cli</ButtonCad>
           </div>
-
-        <Table clients={clients} 
+       <Table clients={clients} 
         upDateC={upDateC}
         deleteC={deleteC}></Table>
       </Layout>
