@@ -1,3 +1,4 @@
+import ButtonCad from "../components/ButtonCad";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Client from "../core/Client";
@@ -27,6 +28,10 @@ const clients = [
        bg-gradient-to-r from-blue-500 to bg-purple-500
        text-white`}>
       <Layout title='Cadastro'>
+        <div className='flex justify-end'>
+        <ButtonCad color='green'className='mb-4'>New Client</ButtonCad>
+          </div>
+
         <Table clients={clients} 
         upDateC={upDateC}
         deleteC={deleteC}></Table>
