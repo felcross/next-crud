@@ -3,21 +3,29 @@ import Form from "../components/Form";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Client from "../core/Client";
-import {useState} from "react";
+import {useState,useEffect} from "react";
+import ClientRepo from "../core/ClientRepo";
+import Cclient from "../firebase/db/Cclient";
 
 
 export default function Home() {
+   
+  const repo : ClientRepo = new Cclient()
+
   const [view, setView] = useState<'table'|'form'>('table')
   const [client, setClient] = useState<Client>(Client.empty)
+  const [clients, setClients] = useState<Client[]>([])
 
-const clients = [
-  new Client ('jonh',34,'1'),
-  new Client('constant',37,'2'),
-  new Client('dom',37,'3'),
-  new Client('gok',35,'4'),
-  new Client('zshell',37,'5'),
-  new Client('axios',37,'6'),
-]
+ useEffect(getAll,[])
+
+ function getAll(){
+  repo.getAll().then(clients=>{
+    setClients(clients)
+    setView('table')
+  })
+  
+ }
+
 
  function upDateC(client:Client){
   setClient(client)
@@ -29,12 +37,13 @@ const clients = [
   setView('form')
  }
 
- function deleteC(client:Client){
-  console.log(client.id)
+ async function deleteC(client:Client){
+  await repo.delete(client) 
+  getAll()
  }
- function saveC(client:Client){
-  console.log(client)
-  setView('table')
+ async function saveC(client:Client){
+    await repo.save(client) 
+   getAll()
 
  }
 
