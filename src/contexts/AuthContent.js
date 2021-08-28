@@ -18,7 +18,7 @@ export function AuthProvider({children}) {
         .signInWithPopup(new firebase,auth.signInAnonymously())
         .then((res) =>{
             setUser(res.user)
-            Router.push("/")
+            Router.push("/index")
         })
     } finally {
         setLoading(false)
