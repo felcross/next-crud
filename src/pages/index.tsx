@@ -3,6 +3,7 @@ import Form from "../components/Form";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import useClients from "../hooks/useClients";
+import useAuth from "../hooks/useAuth";
 
 
 
@@ -10,6 +11,7 @@ import useClients from "../hooks/useClients";
 export default function Home() {
    
  const {tableView,upDateC,newClient,getAll,deleteC,saveC,client,clients,viewTable} = useClients()
+ const {user,signin} = useAuth()
 
  
 
@@ -23,6 +25,7 @@ export default function Home() {
        {tableView? 
        (
        <><div className='flex justify-end'>
+         <button className="md-5" onClick={()=>signin}>LOGAR</button>
         <ButtonCad color='green' 
         className='mb-4'
         onClick={newClient}
