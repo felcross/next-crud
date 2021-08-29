@@ -25,7 +25,7 @@ export default function Home() {
        {tableView? 
        (
        <><div className='flex justify-end'>
-         <button className="md-5" onClick={()=>signin}>LOGAR</button>
+         {/*<button className="md-5" onClick={()=>signin}>LOGAR</button>*/}
         <ButtonCad color='green' 
         className='mb-4'
         onClick={newClient}

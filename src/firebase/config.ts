@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
-import 'firebase/auth'
+import 'firebase/firebase-auth'
 
 if(!firebase.apps.length){
     firebase.initializeApp({

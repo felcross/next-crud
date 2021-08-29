@@ -4,10 +4,10 @@ import {AuthProvider} from '../contexts/AuthContent.js'
 
 
 function MyApp({ Component, pageProps }) {  
-  return 
+  return (
   <AuthProvider>
   <Component {...pageProps} />
-  </AuthProvider>
+  </AuthProvider>)
 }
 
 export default MyApp
