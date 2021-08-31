@@ -1,7 +1,9 @@
-## tarefas 
+## Tarefas 
 
 O controle das tarefas desse projeto será realizado no GitHub
-
+https://next-crud-beta.vercel.app/
+ainda não consgui fazer a conexão social com FIREBASE funcionar,
+porem ele faz o crud normal em localhost com a conexão com firebase.
 
 
 
